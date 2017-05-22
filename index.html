@@ -84,10 +84,8 @@
                 <li>Microsoft Azure Data Lake Store</li>
                 <li>Microsoft Azure SQL Data Warehouse</li>
                 <aside class="notes">
-                    There's a theme here...<br/>
-                    Didn't know much about the specifics<br/>
-                    Figuring out how to deliver was more challenging than I thought<br/>
-                    To Google...
+                    There's a theme here...<br/> Didn't know much about the specifics<br/> Figuring out how to deliver was
+                    more challenging than I thought<br/> To Google...
                 </aside>
 
             </section>
@@ -100,9 +98,8 @@
                    <a href="https://github.com/Microsoft/azure-docs/tree/master/articles/data-factory">"What is Azure Data Factory"</a>,<a href = "https://github.com/Microsoft">Microsoft</a>,<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>
                    </span>
                 <aside class="notes">
-                    Hosted tool for orchestrating data flow and transformation<br/> Built in connectors for various Sources<br/>
-                     No built-in transformations,<br/>
-                    needs to connect to (or spin up) a hosted service<br/> cf AWS Pipeline/Glue, Azkaban, Airflow, Luigi, etc.
+                    Hosted tool for orchestrating data flow and transformation<br/> Built in connectors for various Sources<br/>                    No built-in transformations,<br/> needs to connect to (or spin up) a hosted service<br/> cf AWS Pipeline/Glue,
+                    Azkaban, Airflow, Luigi, etc.
                 </aside>
 
             </section>
@@ -115,7 +112,8 @@
                    </span>
                 <aside class="notes">
                     Not much to say, this is just HDFS really.<br/> "Optimised for big data workloads" &rarr; this is "secret
-                    sauce"<br/> Billing differences!
+                    sauce"
+                    <br/> Billing differences!
                 </aside>
 
 
@@ -144,10 +142,10 @@
 
             </section>
             <section>
-                <h2>The Minimum Viable _Project_</h2>
+                <h2>The Minimum Viable <i>Project</i></h2>
                 <img class="stretch" src="images/powerbi.png" alt="PowerBI Bar chart" />
                 <aside class="notes">
-                    One measure, 1 Dimension (or maybe 2!)<br/> Makes sense on-prem too<br/> BDUF $rarr; deployment problems<br/>                    RFC didn't pass the ARP of the CCB<br/> Apply what you know!
+                    One measure, 1 Dimension (or maybe 2!)<br/> Makes sense on-prem too<br/> BDUF &rarr; deployment problems<br/>                    RFC didn't pass the ARP of the CCB<br/> Apply what you know!
                 </aside>
             </section>
 
@@ -160,10 +158,7 @@
                 <h4>Adding new elements</h4>
                 <img class="stretch" src="images/oauth-popup.png" alt="ADF in the Portal" />
             </section>
-            <section>
-                <h4>Saving your work</h4>
-                <img class="stretch" src="images/cannot-deploy-incomplete.png" alt="ADF in the Portal" />
-            </section>
+
             <section>
                 <h4>Scrolling</h4>
                 <img class="stretch" src="images/scrolling-in-portal.png" alt="ADF in the Portal" />
@@ -171,6 +166,10 @@
             <section>
                 <h4>Scrolling</h4>
                 <img class="stretch" src="images/unsaved-edits.png" alt="ADF in the Portal" />
+            </section>
+            <section>
+                <h4>Saving your work</h4>
+                <img class="stretch" src="images/cannot-deploy-incomplete.png" alt="ADF in the Portal" />
             </section>
             <section>
                 <h4>Options for promoting code between environments</h4>
@@ -187,32 +186,59 @@
                     DevOps team can deploy the credentials! Conclusion: this approach doesn't scable beyond one environment.
                 </aside>
             </section>
+
             <section>
-                <section>
-                    <h4>Data Factory in Visual Studio</h4>
-                    <img class="stretch" src="images/adf-addin-two-stars.png" alt="ADF addin" />
-                </section>
-                <section>
-                    <img class="stretch" src="images/Yates-Hounslow-Tripadvisor.png" alt="ADF addin" />
-                </section>
+                <h4>Data Factory in Visual Studio</h4>
+                <img class="stretch" src="images/adf-addin-two-stars.png" alt="ADF addin" />
+                <aside class="notes">
+                    Only for VS2015<br/> Chicken Cottage in Bromley has 2.5 stars.
+                </aside>
             </section>
+
+
             <section>
                 <section>
                     <h4>Data Factory in Visual Studio</h4>
                     <img class="stretch" src="images/adf-in-visual-studio.png" alt="ADF addin" />
+                    <aside class="notes">
+                        Structure the same as in the Portal <br/> Can add elements from Solution Explorer<br/> The picture
+                        doesn't do anything!
+                    </aside>
                 </section>
 
                 <section>
                     <h4>Right-click &rarr; Publish to Azure &rarr; Devops!</h4>
                     <img class="stretch" src="images/publish-dialog-1.png" alt="ADF addin" />
-
+                    <aside class="notes">
+                        The Data Factory has to exist or be created in this dialog.
+                    </aside>
                 </section>
 
                 <section>
                     <h4>Right-click &rarr; Publish to Azure &rarr; Devops!</h4>
                     <img class="stretch" src="images/publish-dialog-2.png" alt="ADF addin" />
+                    <aside class="notes">
+                        Deployment configs let us specify items that change from env to env<br/> Such as connection strings.<br/>                        GO UP: <br/> In summary, this experience is about connected development.<br/>
+                        <b>Conways' Law</b>
+
+                    </aside>
 
                 </section>
+
+            </section>
+            <section>
+                <h4>Campbell's Law</h4>
+                <blockquote>
+                    Organizations which sell developer tools (in the broad sense used here) are constrained to produce tools that reflect the
+                    terrible working practices of the people to whom they market those tools.
+                </blockquote>
+                <aside class="notes">
+                    BI systems were developed by a hobbit sitting in the corner<br/>
+                    Brent (phoenix project)<br/>
+                    Bottleneck, bus factor of 1<br/>
+                    Used to working by themselves, in their own way.
+                </aside>
+
             </section>
 
             <section>
@@ -222,11 +248,10 @@
                     <ul>Databases</ul>
                     <ul>Data Lake</ul>
                     <ul>Data Factory</ul>
-                    <ul>Data Warehouse</ul>
+
                 </li>
                 <li>Allows us to specify a <i>resource group</i> at deployment time</li>
-                <aside class="notes">cf CloudFormation<br/>
-                Resource Group $rarr; Unit of Deployment, security boundary, etc.</aside>
+                <aside class="notes">cf CloudFormation<br/> Resource Group &rarr; Unit of Deployment, security boundary, etc.</aside>
             </section>
 
             <section>
@@ -239,10 +264,35 @@
                 <pre class="stretch"><code class='sample' sample='data/demo-data-factory.js'></code></pre>
 
             </section>
+            <section>
+                <h4>The ETL Procedures</h4>
+                <pre class="stretch"><code class='sample' sample='data/EtlProcs.sql'></code></pre>
+
+            </section>
 
             <section>
-                <h2>What about the Data Warehouse?</h2>
+                <h2>Managing the Data Warehouse Schema</h2>
+                <hr/>
+                <ul class="fragment">
+                    <h3>"Smart" tools won't work</h3>
+                </ul>
+                <ul class="fragment">
+                    <h3>"Migration" tools aren't "smart"</h3>
+                </ul>
+                <ul class="fragment">
+                    <h3>DbUp</h3>
+                </ul>
+                <aside class="notes">
+                    MS and others have tools for database deployment.<br/>Mostly rely on constructing a "model"<br/> Migration
+                    tools are just script runners.<br/>Host Language:EF/Ruby<br/>XML:Liquibase<br/>SQL
+                </aside>
 
+            </section>
+            <section>
+                <img class="stretch" src="images/dbup-deployment.png" alt="DBUp" />
+                <aside class="notes">
+                    From Nuget, but this is local! Other ways to use it.
+                </aside>
             </section>
 
             <section>
@@ -267,8 +317,32 @@
 
 
             <section>
-                ## but how do we provision an environment per developer?
+                <h4>The Build Definition</h4>
+                <img class="stretch" src="images/builddef1.png" alt="VSTS Build Definition" />
             </section>
+
+            <section>
+                <img class="stretch" src="images/gitprocess.png" alt="Process" />
+            </section>
+
+
+            <section>
+                <h4>Release Management</h4>
+                <img class="stretch" src="images/release-management.png" alt="Release" />
+            </section>
+
+                <section>
+                <h4>Summary</h4>
+                <li>Use AzureRM to create Data Factories</li>
+                <li>Find a sensible way to manage the DW schema</li>
+                <li>Create a new environment per brancho</li>
+                <li>Use Release Management to deploy changes to "permanent" environments</li>
+            </section>
+
+            <section>
+                <img class="stretch" src="images/pizza.jpeg" alt="Pizza" />
+            </section>
+
 
 
         </div>
@@ -293,6 +367,18 @@
                 { src: 'plugin/sampler/sampler.js' }
             ]
         });
+        // Slide number formatting can be configured using these variables:
+        //  "h.v": 	horizontal . vertical slide number (default)
+        //  "h/v": 	horizontal / vertical slide number
+        //    "c": 	flattened slide number
+        //  "c/t": 	flattened slide number / total slides
+
+        Reveal.configure({ slideNumber: 'c/t' });
+        Reveal.configure({ showSlideNumber: 'speaker' });
+        // Control which views the slide number displays on using the "showSlideNumber" value:
+        //     "all": show on all views (default)
+        // "speaker": only show slide numbers on speaker notes view
+        //   "print": only show slide numbers when printing to PDF
     </script>
 </body>
 
