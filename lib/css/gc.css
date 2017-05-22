@@ -1,0 +1,13 @@
+.reveal .attribution{
+    position:absolute;
+    bottom:0;
+    right:0;
+    font-size:0.2em
+}
+.scrollable-slide {
+    height: 800px;
+    overflow-y: auto !important;
+}
+ .reveal li {
+    text-align: left;
+  }

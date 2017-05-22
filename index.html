@@ -5,13 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>reveal.js</title>
+    <title>Continuous Delivery on the Azure Data Platform</title>
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/black.css">
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <link rel="stylesheet" href="lib/css/gc.css">
 
     <!-- Printing and PDF exports -->
     <script>
@@ -27,76 +29,270 @@
     <div class="reveal">
         <div class="slides">
             <section>
-            <section data-markdown>
-                <textarea data-template>
-                        ## Continuous Delivery in Microsoft Azure <!-- .element: class="fragment" -->   
-                        > I heard you like pipelines so I put a pipeline on your pipeline   <!-- .element: class="fragment" -->  
- 
-                        ### Gavin Campbell <!-- .element: class="fragment" -->
-                        #### gavin@arapaima.uk <!-- .element: class="fragment" -->
-                </textarea>
+                <h1>Modern Data<br/>
+                    <hr/>Medieval Methods</h1>
+            </section>
+
+            <section>
+                <h2> Continuous Delivery on the Microsoft Azure Data Platform</h2>
+                <hr/>
+                <h3>Gavin Campbell </h3>
+                <h4>gavin@arapaima.uk </h4>
+
 
             </section>
             <section>
-                    <section><h2>About Me<h2></section>
-            </section> 
+
+                <h2>Who is this guy anyway?</h2>
+
+                <img class="stretch " src="images/500px-MiB.svg.png" alt="Mystery Man" />
+                <aside class="notes">
+                    Don't normally talk about myself Used to be a developer, (Sourcesafe!)<br/> Next company was better,
+                    product was a stored-proc fest.
+                    <br/> Life happened, became in charge.<br/> Apply what you already know how to do;<br/> new project was
+                    a stored-procedure fest.
+                    <br/>Read the XP book
+                    <br/>Moved back, SQl Server and BI projects.</br>
+                    Recent focus on CI/CD; Jenkins/Visual Studio/etc. No difference between "data dev" and "dev dev"<br/>                    Write Code &rarr; either it works or it doesn't!
+                </aside>
             </section>
 
-            
-            <section data-markdown>
-                <textarea data-template>
-                        ## The project
 
-                        * Proof of concept for Microsot Azure 
-                        * Consolidating on-prem reporting systems
-                        * With added Big Data
-
-                    </textarea>
-            </section>
-            <section data-markdown>
-                <textarea data-template>
-                        ## The technology stack
-
-                        * Microsoft Azure Data Factory 
-                        * Microsoft Azure Data Lake
-                        * Microsoft Azure SQL Data Warehouse
-
-                    </textarea>
-            </section>
-
-            
-            <section> Azure Data Factory 
-
-            </section>
-            <section> Azure Data Lake </section>
-            <section> Azure SQL Data Warehouse</section>
 
             <section>
 
-                <h2>The CTO's Shopping List:</h2>
-                <form style="text-align: left;">
-                    <input type="checkbox" style="width:20px;height:20px;" checked> Cloud<br>
-                    <input type="checkbox" checked>Big Data<br>
-                </form>
+                <h2>The project</h2>
+
+                <li>Proof of concept for Microsoft Azure </li>
+                <li>Consolidating on-prem reporting systems</li>
+                <li>With added Big Data</li>
+
+
+                <aside class="notes">
+                    So, all of that is how some people I knew ended up asking me for help with this project.<br/> Not on
+                    the "doing" of the project, but on the "delivering" .<br/> Apply what you know to what you don't
+                </aside>
+
             </section>
+
+
+            <section>
+
+                <h2>The technology stack</h2>
+
+                <li>Microsoft Azure Data Factory </li>
+                <li>Microsoft Azure Data Lake Store</li>
+                <li>Microsoft Azure SQL Data Warehouse</li>
+                <aside class="notes">
+                    There's a theme here...<br/>
+                    Didn't know much about the specifics<br/>
+                    Figuring out how to deliver was more challenging than I thought<br/>
+                    To Google...
+                </aside>
+
+            </section>
+            <section>
+
+                <h2>Azure Data Factory</h2>
+
+                <img src="images/what-is-azure-data-factory.png" alt="Data Factory Overview Diagram" />
+                <span class="attribution">
+                   <a href="https://github.com/Microsoft/azure-docs/tree/master/articles/data-factory">"What is Azure Data Factory"</a>,<a href = "https://github.com/Microsoft">Microsoft</a>,<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>
+                   </span>
+                <aside class="notes">
+                    Hosted tool for orchestrating data flow and transformation<br/> Built in connectors for various Sources<br/>
+                     No built-in transformations,<br/>
+                    needs to connect to (or spin up) a hosted service<br/> cf AWS Pipeline/Glue, Azkaban, Airflow, Luigi, etc.
+                </aside>
+
+            </section>
+
+            <section>
+                <h2>Azure Data Lake Store</h2>
+                <img class="stretch" src="images/data-lake-store-concept.png" alt="Data Lake Store Concept" />
+                <span class="attribution">
+                   <a href="https://github.com/Microsoft/azure-docs/tree/master/articles/data-lake-store">Data Lake Store Concepts</a>,<a href= "https://github.com/Microsoft">Microsoft</a>,<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>
+                   </span>
+                <aside class="notes">
+                    Not much to say, this is just HDFS really.<br/> "Optimised for big data workloads" &rarr; this is "secret
+                    sauce"<br/> Billing differences!
+                </aside>
+
+
+            </section>
+            <section>
+                <h2>Azure SQL Data Warehouse</h2>
+                <img class="stretch" src="images/dwarchitecture.png" alt="Data Warehouse Architecture" />
+                <span class="attribution">
+                   <a href="https://github.com/Microsoft/azure-docs/tree/master/articles/sql-data-warehouse">Data Lake Store Concepts</a>,<a href = "https://github.com/Microsoft">Microsoft</a>,<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>
+                   </span>
+                <aside class="notes">
+                    A bit more than SQL Server in the Cloud <br/> Can Pause without losing data <br/> Limitations imposed
+                    by MPP Architecture<br/>PolyBase
+
+                </aside>
+
+
+            </section>
+            <section>
+                <h2>The Proof of Concept</h2>
+                <img class="stretch" src="images/example-project.png" alt="Example Project" />
+                <aside class="notes">
+                    Use ADF to extract from source into ADL.<br/> Use Polybase to load from ADL into ADW.<br/> Almost all
+                    the "action" is in ADF activities and Polybase SP's. <br/>
+                </aside>
+
+            </section>
+            <section>
+                <h2>The Minimum Viable _Project_</h2>
+                <img class="stretch" src="images/powerbi.png" alt="PowerBI Bar chart" />
+                <aside class="notes">
+                    One measure, 1 Dimension (or maybe 2!)<br/> Makes sense on-prem too<br/> BDUF $rarr; deployment problems<br/>                    RFC didn't pass the ARP of the CCB<br/> Apply what you know!
+                </aside>
+            </section>
+
+
+            <section>
+                <h4> Data Factory Development in the Azure Portal</h4>
+                <img class="stretch" src="images/data-factory-in-portal.png" alt="ADF in the Portal" />
+            </section>
+            <section>
+                <h4>Adding new elements</h4>
+                <img class="stretch" src="images/oauth-popup.png" alt="ADF in the Portal" />
+            </section>
+            <section>
+                <h4>Saving your work</h4>
+                <img class="stretch" src="images/cannot-deploy-incomplete.png" alt="ADF in the Portal" />
+            </section>
+            <section>
+                <h4>Scrolling</h4>
+                <img class="stretch" src="images/scrolling-in-portal.png" alt="ADF in the Portal" />
+            </section>
+            <section>
+                <h4>Scrolling</h4>
+                <img class="stretch" src="images/unsaved-edits.png" alt="ADF in the Portal" />
+            </section>
+            <section>
+                <h4>Options for promoting code between environments</h4>
+                <li class="fragment">
+                    Copy and paste via notepad
+                </li>
+                <li class="fragment">
+                    Use Microsoft Word to create a deployment guide
+                </li>
+                <li class="fragment">
+                    <i>But what about the credentials?</i>
+                </li>
+                <aside class="notes">
+                    DevOps team can deploy the credentials! Conclusion: this approach doesn't scable beyond one environment.
+                </aside>
+            </section>
+            <section>
+                <section>
+                    <h4>Data Factory in Visual Studio</h4>
+                    <img class="stretch" src="images/adf-addin-two-stars.png" alt="ADF addin" />
+                </section>
+                <section>
+                    <img class="stretch" src="images/Yates-Hounslow-Tripadvisor.png" alt="ADF addin" />
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h4>Data Factory in Visual Studio</h4>
+                    <img class="stretch" src="images/adf-in-visual-studio.png" alt="ADF addin" />
+                </section>
+
+                <section>
+                    <h4>Right-click &rarr; Publish to Azure &rarr; Devops!</h4>
+                    <img class="stretch" src="images/publish-dialog-1.png" alt="ADF addin" />
+
+                </section>
+
+                <section>
+                    <h4>Right-click &rarr; Publish to Azure &rarr; Devops!</h4>
+                    <img class="stretch" src="images/publish-dialog-2.png" alt="ADF addin" />
+
+                </section>
+            </section>
+
+            <section>
+                <h4>Azure Resource Manager Templates</h4>
+                <li>Entire solution can be defined in JSON file(s):
+                    <ul>Servers</ul>
+                    <ul>Databases</ul>
+                    <ul>Data Lake</ul>
+                    <ul>Data Factory</ul>
+                    <ul>Data Warehouse</ul>
+                </li>
+                <li>Allows us to specify a <i>resource group</i> at deployment time</li>
+                <aside class="notes">cf CloudFormation<br/>
+                Resource Group $rarr; Unit of Deployment, security boundary, etc.</aside>
+            </section>
+
+            <section>
+                <h4>The master template</h4>
+                <pre class="stretch"><code class='sample' sample='data/KitchenSink.js'></code></pre>
+
+            </section>
+            <section>
+                <h4>The data factory</h4>
+                <pre class="stretch"><code class='sample' sample='data/demo-data-factory.js'></code></pre>
+
+            </section>
+
+            <section>
+                <h2>What about the Data Warehouse?</h2>
+
+            </section>
+
+            <section>
+                <h2>The CTO's Shopping List</h2>
+
+                <ul class="fragment">
+                    <h3>Big Data &check;</h3>
+                </ul>
+                <ul class="fragment">
+                    <h3>Hybrid Cloud &check;</h3>
+                </ul>
+                <ul class="fragment">
+                    <h3>Data Lake &check;</h3>
+                </ul>
+                <ul class="fragment">
+                    <h2><span class="fragment highlight-green">DevOps?</span></h2>
+
+            </section>
+            <section>
+                <img class="stretch" src="images/VSTS-Devops.png" alt="Now with added DevOps" />
+            </section>
+
+
+            <section>
+                ## but how do we provision an environment per developer?
+            </section>
+
+
         </div>
     </div>
 
     <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.js"></script>
+    <!-- Required for sampler.js! -->
+    <script src="lib/js/jquery-3.2.1.min.js"></script>
 
     <script>
-            // More info about config & dependencies:
-            // - https://github.com/hakimel/reveal.js#configuration
-            // - https://github.com/hakimel/reveal.js#dependencies
-            Reveal.initialize({
-                dependencies: [
-                    { src: 'plugin/markdown/marked.js' },
-                    { src: 'plugin/markdown/markdown.js' },
-                    { src: 'plugin/notes/notes.js', async: true },
-                    { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
-                ]
-            });
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+        Reveal.initialize({
+            dependencies: [
+                { src: 'plugin/markdown/marked.js' },
+                { src: 'plugin/markdown/markdown.js' },
+                { src: 'plugin/zoom-js/zoom.js', async: true },
+                { src: 'plugin/notes/notes.js', async: true },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+                { src: 'plugin/sampler/sampler.js' }
+            ]
+        });
     </script>
 </body>
 
